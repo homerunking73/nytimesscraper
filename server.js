@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const request = require("request");
 const cheerio = require("cheerio");
 const hbs = require("express-handlebars");
-
+const path = require("path");
 // const eb = require("./models");
 
 const port = process.env.PORT || 8000;
@@ -17,6 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
+app.set("views", path.join(__dirname, "views"));
+
 app.set("view engine", "handlebars");
 
 const router = require("./controllers/scraper.js");
