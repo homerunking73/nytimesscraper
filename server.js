@@ -12,7 +12,9 @@ const port = process.env.PORT || 8000;
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "../public"));
+// app.use(express.static(__dirname + "../public"));
+
+app.use(express.static("public"));
 
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
