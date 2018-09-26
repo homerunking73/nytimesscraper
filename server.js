@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
-app.set("views", path.join(__dirname, "views"));
+app.set("Views", path.join(__dirname, "Views"));
 
 app.set("view engine", "handlebars");
 
